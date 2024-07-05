@@ -48,7 +48,7 @@ class ContainsIterator:
 
     #pylint:disable=no-value-for-parameter
     @handle_args_repeats(cloner=None)
-    @invalidate_these_args(invalidating_locs=(True,[1]),do_invalidate=lambda obj: obj.invalidate(),
+    @invalidate_these_args(invalidating_locs=(False,[0]),do_invalidate=lambda obj: obj.invalidate(),
                            validation_query=lambda obj: obj.is_valid())
     def combine_many(self, *others : ContainsIterator):
         """
