@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onedriving"
+version = "0.0.1"
+authors = [
+  { name="Ammar Husain", email="ammar.s.husain@gmail.com" },
+]
+description = "Only one object containing the iterator or closure, cloning and errors related to this concept"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Intended Audience :: Science/Research"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Cobord/Plabic"
+"Bug Tracker" = "https://github.com/Cobord/Plabic/issues"
