@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "onedriving"
+name = "ownershipworkaround"
 version = "0.0.1"
 authors = [
   { name="Ammar Husain", email="ammar.s.husain@gmail.com" },
@@ -13,12 +13,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-    "Topic :: Scientific/Engineering :: Mathematics",
-    "Topic :: Scientific/Engineering :: Physics",
-    "Intended Audience :: Science/Research"
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Cobord/Plabic"
-"Bug Tracker" = "https://github.com/Cobord/Plabic/issues"
+"Homepage" = "https://github.com/Cobord/OwnershipWorkaround"
+"Bug Tracker" = "https://github.com/Cobord/OwnershipWorkaround/issues"
