@@ -8,6 +8,8 @@ but in this manner without the features of this package that
     we don't get errors
     but instead just wrong behavior
 """
+#pylint:disable=R0801
+
 from __future__ import annotations
 from itertools import chain
 from typing import List, Optional

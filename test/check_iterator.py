@@ -80,6 +80,7 @@ def test_2_objects():
     """
     what happens when have two places driving iteration
     """
+    #pylint:disable=too-many-statements
     x = ContainsIterator([1,2,3])
     y = ContainsIterator([4,5,6])
     assert x.is_valid()

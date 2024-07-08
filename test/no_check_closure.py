@@ -5,9 +5,10 @@ we have a method on it which combines 2 such instances
 but we only want one source calling the closure
     to be the part that is in self
 but in this manner without the features of this package that
-    we don't get errors
-    but instead just wrong behavior
+    we don't get the explanatory errors
 """
+#pylint:disable=R0801
+
 from __future__ import annotations
 
 class ContainsClosure:
@@ -65,3 +66,23 @@ def test_2_objects():
     assert y.consume_one() == 4
     # x's count is 2 plus y's 5
     assert x.consume_one() == 7
+
+def test_one_object():
+    """
+    what happens when have combining with self
+    infinitely recurses
+    """
+    x = ContainsClosure()
+    x.combine(x)
+    #pylint:disable=import-outside-toplevel
+    import sys
+    old_limit = sys.getrecursionlimit()
+    sys.setrecursionlimit(63)
+    errored = False
+    try:
+        assert x.consume_one() == 3
+    except RecursionError:
+        errored = True
+    finally:
+        assert errored
+        sys.setrecursionlimit(old_limit)
