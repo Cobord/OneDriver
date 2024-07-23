@@ -91,6 +91,23 @@ def handle_args_repeats(f : Callable[...,Any], cloner: Optional[Callable[[T],T]]
     return wrapper
 
 @parameterized
+def check_validity(f : Callable[...,Any],
+                   validation_query: Callable[[T],bool]):
+    """
+    if f takes args which are all instances of T
+    then after cloning with above decorator
+    marks
+    now have distinct objects in args
+    make sure they are all valid according to the validation query
+    if not raise ConsumedObjectError
+    then do f as normally
+    """
+    invalidate_these_args(f,
+                          invalidating_locs=[True,[]],
+                          do_invalidate=lambda _: None,
+                          validation_query=validation_query)
+
+@parameterized
 def invalidate_these_args(f : Callable[...,Any],
                           invalidating_locs: Tuple[bool,List[int]],
                           do_invalidate: Callable[[T],None],
